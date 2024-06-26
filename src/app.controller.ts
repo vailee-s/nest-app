@@ -7,7 +7,12 @@ import { AppService } from './app.service';
 export class AppController {
   // 代表在实例化AppController的时候，会自动实例化AppService，并且注入到AppController的构造器参数中，
   // 构造注入
-  constructor(private readonly appService: AppService) {}
+  // constructor(private readonly appService: AppService) {}
+  constructor(
+    @Inject('app_service') private readonly appService: AppService,
+    @Inject('person') private readonly person: any,
+    @Inject('person2') private readonly person2: { name: string; age: number },
+  ) {}
 
   // 属性注入
   // @Inject(AppService)
@@ -16,6 +21,8 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log(this.person);
+
     debugger;
     return this.appService.getHello();
   }
