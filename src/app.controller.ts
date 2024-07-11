@@ -5,7 +5,7 @@ import { AppService } from './app.service';
 // @Controller() 代表这个class可以被注入到其他地方使用，及AppController的构造器参数依赖了AppService
 @Controller()
 export class AppController {
-  // 代表在实例化AppController的时候，会自动实例化AppService，并且注入到AppController的构造器参数中，
+  // constructor 代表在实例化AppController的时候，会自动实例化AppService，并且注入到AppController的构造器参数中，
   // 构造注入
   // constructor(private readonly appService: AppService) {}
   constructor(

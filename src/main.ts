@@ -7,6 +7,6 @@ async function bootstrap() {
 
   app.useStaticAssets('public', { prefix: '/static' });
 
-  await app.listen(3000);
+  await app.listen(8099);
 }
 bootstrap();
